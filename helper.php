@@ -16,17 +16,17 @@ class ModOpensimGridinfos
         $app  = JFactory::getApplication();
         $item = $app->getMenu()->getItem($params->get($type));
 
-    if ($item)
-    {
-        $url = 'index.php?Itemid=' . $item->id;
-    }
-    else
-    {
-        // Stay on the same page
-        $url = JUri::getInstance()->toString();
-    }
+        if ($item)
+        {
+            $url = 'index.php?Itemid=' . $item->id;
+        }
+        else
+        {
+            // Stay on the same page
+            $url = JUri::getInstance()->toString();
+        }
 
-    return base64_encode($url);
+        return base64_encode($url);
     }
 }
 ?>
